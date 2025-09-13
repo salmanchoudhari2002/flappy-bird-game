@@ -53,10 +53,11 @@ pip install pygame
 
 ## ▶️ How to Run  
 
-Navigate into the `src/` folder and run:  
+1. Make sure you have Python installed (3.8+ recommended).
+2. Install pygame if you haven’t already:
 
-cd src  
-python flappy.py  
+   ```bash
+   pip install pygame
 
 The game window will open locally 🎉  
 
