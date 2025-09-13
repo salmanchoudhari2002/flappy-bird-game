@@ -3,9 +3,13 @@ import pygame
 import sys
 import time
 import random
+import os
 
 # Initializing the pygame
 pygame.init()
+
+# Get the absolute path of the project (parent of src/)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Frames per second
 clock = pygame.time.Clock()
@@ -81,14 +85,14 @@ screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Flappy Bird")
 
 # setting background and base image
-back_img = pygame.image.load("../assets/img_46.png")
-floor_img = pygame.image.load("../assets/img_50.png")
+back_img = pygame.image.load(os.path.join(BASE_DIR, "assets/img_46.png"))
+floor_img = pygame.image.load(os.path.join(BASE_DIR, "assets/img_50.png"))
 floor_x = 0
 
 # different stages of bird
-bird_up = pygame.image.load("../assets/img_47.png")
-bird_down = pygame.image.load("../assets/img_48.png")
-bird_mid = pygame.image.load("../assets/img_49.png")
+bird_up = pygame.image.load(os.path.join(BASE_DIR, "assets/img_47.png"))
+bird_down = pygame.image.load(os.path.join(BASE_DIR, "assets/img_48.png"))
+bird_mid = pygame.image.load(os.path.join(BASE_DIR, "assets/img_49.png"))
 birds = [bird_up, bird_mid, bird_down]
 bird_index = 0
 bird_flap = pygame.USEREVENT
@@ -99,7 +103,7 @@ bird_movement = 0
 gravity = 0.17
 
 # Loading pipe image
-pipe_img = pygame.image.load("../assets/greenpipe.png")
+pipe_img = pygame.image.load(os.path.join(BASE_DIR, "assets/greenpipe.png"))
 pipe_height = [400, 350, 533, 490]
 
 # for the pipes to appear
@@ -109,7 +113,7 @@ pygame.time.set_timer(create_pipe, 1200)
 
 # Displaying game over image
 game_over = False
-over_img = pygame.image.load("../assets/img_45.png").convert_alpha()
+over_img = pygame.image.load(os.path.join(BASE_DIR, "assets/img_45.png")).convert_alpha()
 over_rect = over_img.get_rect(center=(width // 2, height // 2))
 
 # setting variables and font for score
