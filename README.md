@@ -53,7 +53,7 @@ pip install pygame
 
 ## ▶️ How to Run  
 
-1. Make sure you have Python installed (3.8+ recommended).
+1. Make sure you have Python installed (3.8+ recommended)
 2. Install pygame if you haven’t already:
 
    ```bash
